@@ -17,4 +17,7 @@ abstract class Vehicle {
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
+    
+    public void check() {
+    }
 }
