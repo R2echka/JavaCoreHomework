@@ -1,4 +1,4 @@
-abstract class Vehicle {
+abstract class Vehicle implements Serviceable {
     private final String modelName;
     private final int wheelsCount;
     public Vehicle(String modelName, int wheelsCount){
@@ -17,7 +17,13 @@ abstract class Vehicle {
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
-    
+
+    @Override
     public void check() {
+        System.out.println("Обслуживаем " + this.getModelName());
+        for (int i = 0; i < this.getWheelsCount(); i++) {
+            this.updateTyre();
+        }
     }
+
 }
